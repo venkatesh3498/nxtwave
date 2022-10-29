@@ -4,8 +4,12 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+
   @media only screen and (max-width: 900px) {
     padding: 16px 16px;
+  }
+  @media only screen and (min-width: 900px) and (max-width: 1300px) {
+    padding: 16px 90px;
   }
 `;
 export const SearchBar = styled.div`

@@ -18,7 +18,7 @@ export const LoaderWrapper = styled.div`
   align-items: center;
 `;
 export const StyledSvg = styled.svg`
-  animation: spin 0.4s linear infinite;
+  animation: spin 1s linear infinite;
   @keyframes spin {
     100% {
       transform: rotate(360deg);

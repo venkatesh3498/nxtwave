@@ -12,4 +12,7 @@ export const CardWrapper = styled.div`
     justify-content: center;
     column-gap: 15px;
   }
+  @media only screen and (min-width: 900px) and (max-width: 1300px) {
+    gap: 10px;
+  }
 `;
