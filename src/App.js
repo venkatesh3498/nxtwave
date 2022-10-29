@@ -1,6 +1,6 @@
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import NavBar from "./components/Navbar/Index";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setData } from "./redux/ResourceSlice";
@@ -34,11 +34,12 @@ function App() {
         <FullScreenLoader />
       ) : (
         <Suspense fallback={<FullScreenLoader />}>
-          <BrowserRouter basename="/nxtwave/">
+          <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/create-resource" element={<CreateForm />} />
+              <Route path="/" exact element={<Navigate to="/nxtwave" />} />
+              <Route path="/nxtwave" exact element={<Home />} />
+              <Route path="/nxtwave/create-resource" element={<CreateForm />} />
             </Routes>
           </BrowserRouter>
         </Suspense>
