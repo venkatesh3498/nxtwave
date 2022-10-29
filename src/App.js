@@ -7,7 +7,7 @@ import { setData } from "./redux/ResourceSlice";
 import { toast } from "react-toastify";
 import FullScreenLoader from "./components/FullScreenLoader/Index";
 import Home from "./pages/Home/Index";
-import CreateForm from "pages/CreateForm/Index";
+import CreateForm from "./pages/CreateForm/Index";
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState();
