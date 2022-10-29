@@ -6,9 +6,8 @@ import { useDispatch } from "react-redux";
 import { setData } from "./redux/ResourceSlice";
 import { toast } from "react-toastify";
 import FullScreenLoader from "./components/FullScreenLoader/Index";
-
-const Home = lazy(() => import("./pages/Home/Index"));
-const CreateForm = lazy(() => import("./pages/CreateForm/Index"));
+import Home from "./pages/Home/Index";
+import CreateForm from "pages/CreateForm/Index";
 function App() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState();
@@ -33,15 +32,13 @@ function App() {
       {loading ? (
         <FullScreenLoader />
       ) : (
-        <Suspense fallback={<FullScreenLoader />}>
-          <BrowserRouter>
-            <NavBar />
-            <Routes>
-              <Route path="/" exact element={<Home />} />
-              <Route path="/create-resource" element={<CreateForm />} />
-            </Routes>
-          </BrowserRouter>
-        </Suspense>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" exact element={<Home />} />
+            <Route path="/create-resource" element={<CreateForm />} />
+          </Routes>
+        </BrowserRouter>
       )}
     </>
   );
