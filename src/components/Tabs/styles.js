@@ -5,6 +5,10 @@ export const TabContainer = styled.div`
   width: 100%;
   justify-content: center;
   margin-top: 46px;
+  @media only screen and (max-width: 600px) {
+    padding: 0px 16px;
+    box-sizing: border-box;
+  }
 `;
 
 export const TabItem = styled.div`

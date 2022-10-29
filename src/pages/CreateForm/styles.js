@@ -9,9 +9,9 @@ const Box = styled.div`
 
 const ImageContainer = styled.div`
   width: 50%;
-  /* height: calc(100vh - 72px); */
-  /* background: url(${CreateFormImage}) no-repeat center
-    center / contain; */
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
 `;
 const StyledImg = styled.img`
   width: 100%;
@@ -23,6 +23,10 @@ const LeftContainer = styled.div`
   width: 50%;
   padding: 22px 52px;
   align-items: center;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    padding: 22px 16px;
+  }
 `;
 const FormTitle = styled.h3`
   margin-top: 0px;

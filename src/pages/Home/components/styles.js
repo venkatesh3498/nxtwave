@@ -8,4 +8,8 @@ export const CardWrapper = styled.div`
   flex-wrap: wrap;
   row-gap: 32px;
   column-gap: 32px;
+  @media only screen and (max-width: 900px) {
+    justify-content: center;
+    column-gap: 15px;
+  }
 `;

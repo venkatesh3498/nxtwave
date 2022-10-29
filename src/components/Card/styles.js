@@ -10,6 +10,10 @@ const BoxCard = styled.div`
   flex-direction: column;
   padding: 24px 24px 0px 24px;
   box-sizing: border-box;
+  @media only screen and (max-width: 360px) {
+    width: 100%;
+    padding: 12px 10px 0px 10px;
+  }
 `;
 const CardHeader = styled.div`
   display: flex;

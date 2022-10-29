@@ -9,6 +9,12 @@ const Nav = styled.nav`
   justify-content: space-between;
   padding: 16px 48px;
   border-bottom: 1px solid #d7dfe9;
+  top: 0;
+  left: 0;
+  position: sticky;
+  @media only screen and (max-width: 900px) {
+    padding: 16px;
+  }
 `;
 const RightContainer = styled.div`
   display: flex;

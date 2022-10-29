@@ -4,6 +4,9 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
   row-gap: 32px;
+  @media only screen and (max-width: 900px) {
+    padding: 16px 16px;
+  }
 `;
 export const SearchBar = styled.div`
   width: 648px;
@@ -15,6 +18,9 @@ export const SearchBar = styled.div`
   background: #ffffff;
   border: 1px solid #d7dfe9;
   border-radius: 3px;
+  @media only screen and (max-width: 900px) {
+    width: 100%;
+  }
 `;
 export const SearchInput = styled.input`
   border: none;
