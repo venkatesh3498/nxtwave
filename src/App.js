@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy, Suspense, useEffect, useState } from "react";
+import NavBar from "./components/Navbar/Index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setData } from "./redux/ResourceSlice";
+import { toast } from "react-toastify";
+import FullScreenLoader from "./components/FullScreenLoader/Index";
 
+const Home = lazy(() => import("./pages/Home/Index"));
+const CreateForm = lazy(() => import("./pages/CreateForm/Index"));
 function App() {
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState();
+  async function getDataFromApi() {
+    setLoading(true);
+    try {
+      const data = await axios.get(
+        "https://media-content.ccbp.in/website/react-assignment/resources.json"
+      );
+      dispatch(setData(data.data));
+    } catch (error) {
+      toast.error(error);
+    } finally {
+      setLoading(false);
+    }
+  }
+  useEffect(() => {
+    getDataFromApi();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loading ? (
+        <FullScreenLoader />
+      ) : (
+        <Suspense fallback={<FullScreenLoader />}>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/create-resource" element={<CreateForm />} />
+            </Routes>
+          </BrowserRouter>
+        </Suspense>
+      )}
+    </>
   );
 }
 
