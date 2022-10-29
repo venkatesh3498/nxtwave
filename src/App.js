@@ -34,7 +34,7 @@ function App() {
         <FullScreenLoader />
       ) : (
         <Suspense fallback={<FullScreenLoader />}>
-          <BrowserRouter>
+          <BrowserRouter basename="/nxtwave">
             <NavBar />
             <Routes>
               <Route path="/" exact element={<Home />} />
