@@ -16,7 +16,7 @@ const NavBar = () => {
         {!location.pathname.includes("/create-resource") && (
           <Button
             text="add item"
-            onClick={() => Navigate("/nxtwave/create-resource")}
+            onClick={() => Navigate("/create-resource")}
             variant="success"
           />
         )}

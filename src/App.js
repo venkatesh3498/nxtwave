@@ -37,9 +37,8 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route path="/" exact element={<Navigate to="/nxtwave" />} />
-              <Route path="/nxtwave" exact element={<Home />} />
-              <Route path="/nxtwave/create-resource" element={<CreateForm />} />
+              <Route path="/" exact element={<Home />} />
+              <Route path="/create-resource" element={<CreateForm />} />
             </Routes>
           </BrowserRouter>
         </Suspense>
